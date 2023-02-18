@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-1: rgb(68, 100, 124);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--clr-1);
+}
+
+.container {
+  background: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+
+  height: 90vh;
+  position: absolute;
+  min-width: 80%;
+  transform: translate(55%, -50%);
+  top: 50%;
+  right: 50%;
+  box-shadow: 0 0 15px 15px rgb(0 0 0 / 25%);
+}
+
+.blue {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.navbar {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mainpage-link {
+  text-decoration: none;
+  color: white;
+}
+
+/*  */
+
+.page-enter {
+  opacity: 0;
+  height: 2vh;
+}
+.page-enter.page-enter-active {
+  opacity: 1;
+  height: 90vh;
+
+  transition: all 500ms;
+
+  /* transition: opacity 2500ms ease-out, transform 3000ms ease; */
+}
+
+.page-exit {
+  opacity: 1;
+}
+.page-exit.page-exit-active {
+  opacity: 0;
+  right: -100%;
+
+  /* transition: opacity 2500ms ease-out, transform 3000ms ease; */
+  /* transition: opacity 1000ms, right 700ms; */
+
+  height: 2vh;
+  transition: all 500ms;
 }
