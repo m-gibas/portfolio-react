@@ -1,18 +1,65 @@
-import { Link } from 'react-router-dom'
+import { useRef } from 'react';
+import { NavLink, useLocation } from 'react-router-dom'
 import { BsFillPersonFill, BsFillHouseFill } from 'react-icons/bs'
 import { AiOutlineLink } from 'react-icons/ai'
+import { CSSTransition } from 'react-transition-group'
 import './Navbar.css'
 
-export interface navbarProps {
-  activeNavbar: boolean
-}
 
-const Navbar = ({ activeNavbar }: navbarProps) => {
+
+const Navbar = () => {
+  const location = useLocation()
+  const nodeRef = useRef(null);
+
   return (
     <div className="navbar">
-        <Link to="/" className="navbar-link">{ {activeNavbar} ? <BsFillHouseFill className='icon' size={'2rem'} /> : 'Main'}</Link>
-        <Link to="/about" className="navbar-link">{ {activeNavbar} ? <BsFillPersonFill className='icon' size={'2rem'} /> : 'About'}</Link>
-        <Link to="/links" className="navbar-link">{ {activeNavbar} ? <AiOutlineLink className='icon' size={'2rem'} /> : 'Links'}</Link>
+      {/* <CSSTransition 
+              timeout={300}
+              classNames={"navbar-transition"}
+              unmountOnExit
+              nodeRef={nodeRef}
+              > */}
+
+        <NavLink ref={nodeRef} to="/" 
+          className={({ isActive }) =>
+          isActive ? "navbar-link navbar-active" : "navbar-link"}>
+             {({ isActive }) => (
+              <>
+                <p className={isActive ? 'navbar-title' : 'hide-element'}>
+                  Home
+                </p>
+                <BsFillHouseFill className={isActive ? 'hide-element' : 'icon' } size={'2rem'} /> 
+              </>
+            )}
+        </NavLink>
+      {/* </CSSTransition> */}
+
+        <NavLink to="/about" 
+          className={({ isActive }) =>
+          isActive ? "navbar-link navbar-active" : "navbar-link"}>
+             {({ isActive }) => (
+              <>
+                <p className={isActive ? 'navbar-title' : 'hide-element'}>
+                  About
+                </p>
+                <BsFillPersonFill className={isActive ? 'hide-element' : 'icon' } size={'2rem'} /> 
+              </>
+            )}
+        </NavLink>
+        <NavLink to="/links" 
+          className={({ isActive }) =>
+          isActive ? "navbar-link navbar-active" : "navbar-link"}>
+             {({ isActive }) => (
+              <>
+                <p className={isActive ? 'navbar-title' : 'hide-element'}>
+                  Links
+                </p>
+                <AiOutlineLink className={isActive ? 'hide-element' : 'icon' } size={'2rem'} /> 
+              </>
+            )}
+        </NavLink>
+
+
       </div>
   )
 }

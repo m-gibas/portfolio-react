@@ -6,13 +6,12 @@ import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
-  const [activeNavbar, setActiveNavbar] = useState(false)
   const location = useLocation()
   
   return (
     <>
 
-      <Navbar activeNavbar={activeNavbar} />
+      <Navbar />
 
         <SwitchTransition>
           <CSSTransition 
