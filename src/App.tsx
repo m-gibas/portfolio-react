@@ -1,26 +1,18 @@
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import Navbar from './components/Navbar/Navbar';
+
 
 
 function App() {
+  const [activeNavbar, setActiveNavbar] = useState(false)
   const location = useLocation()
   
   return (
     <>
-      {/* <Routes>
-        <Route path='/' element={
-          <>
-            <div className="navbar">
-              <Link to="/about" className="mainpage-link">About</Link>
-              <br />
-              <Link to="/links" className="mainpage-link">Links</Link>
-            </div>
-            <div className="container">
-                <p>główna</p>
-            </div>
-          </>
-        }/>
-      </Routes> */}
+
+      <Navbar activeNavbar={activeNavbar} />
 
         <SwitchTransition>
           <CSSTransition 
@@ -30,34 +22,27 @@ function App() {
             classNames={"page"}
             unmountOnExit
             >
-              
-          <Routes location={location}>
+                
+            <Routes location={location}>
 
-            <Route path='/' element={
-              <div className="container">
-                <div className="navbar">
-                  <Link to="/about" className="mainpage-link">About</Link>
-                  <br />
-                  <Link to="/links" className="mainpage-link">Links</Link>
+              <Route path='/' element={
+                <div className="container">
+                    <p>główna</p>
                 </div>
-                  <p>główna</p>
-              </div>
-            }/>
+              }/>
 
-            <Route path='/about' element={ <>
-              <div className="container">
-              <Link to="/" className="mainpage-link">Main</Link>
-                <p>Działa</p>
-              </div>
-            </> } />
-            <Route path='/links' element={ <>
-              <div className="container blue">
-              <Link to="/" className="mainpage-link">Main</Link>
-                <p>Działa 2</p>
-              </div>
-            </> } />
-          </Routes>
-        </CSSTransition>
+              <Route path='/about' element={ <>
+                <div className="container container-about">
+                  <p>Działa</p>
+                </div>
+              </> } />
+              <Route path='/links' element={ <>
+                <div className="container container-links">
+                  <p>Działa 2</p>
+                </div>
+              </> } />
+            </Routes>
+          </CSSTransition>
         </SwitchTransition>
         
     </>
