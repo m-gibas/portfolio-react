@@ -14,6 +14,7 @@ body {
 
 body {
   background: var(--clr-1);
+  overflow: hidden;
 }
 
 .container {
@@ -50,19 +51,19 @@ body {
   color: white;
 }
 
-/*  */
+/* page transitions */
 
 .page-enter {
   opacity: 0;
   height: 2vh;
+  right: -100%;
 }
 .page-enter.page-enter-active {
   opacity: 1;
   height: 90vh;
+  right: 50%;
 
   transition: all 500ms;
-
-  /* transition: opacity 2500ms ease-out, transform 3000ms ease; */
 }
 
 .page-exit {
@@ -70,11 +71,8 @@ body {
 }
 .page-exit.page-exit-active {
   opacity: 0;
-  right: -100%;
-
-  /* transition: opacity 2500ms ease-out, transform 3000ms ease; */
-  /* transition: opacity 1000ms, right 700ms; */
-
+  right: -80%;
   height: 2vh;
-  transition: all 500ms;
+
+  transition: all 600ms;
 }

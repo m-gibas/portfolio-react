@@ -7,7 +7,7 @@ function App() {
   
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={
           <>
             <div className="navbar">
@@ -20,18 +20,30 @@ function App() {
             </div>
           </>
         }/>
-      </Routes>
+      </Routes> */}
 
         <SwitchTransition>
           <CSSTransition 
             key={location.pathname}
             // nodeRef={nodeRef}
-            timeout={500}
+            timeout={600}
             classNames={"page"}
             unmountOnExit
             >
-
+              
           <Routes location={location}>
+
+            <Route path='/' element={
+              <div className="container">
+                <div className="navbar">
+                  <Link to="/about" className="mainpage-link">About</Link>
+                  <br />
+                  <Link to="/links" className="mainpage-link">Links</Link>
+                </div>
+                  <p>główna</p>
+              </div>
+            }/>
+
             <Route path='/about' element={ <>
               <div className="container">
               <Link to="/" className="mainpage-link">Main</Link>
