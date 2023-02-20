@@ -45,12 +45,12 @@ body {
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-/* page transitions */
-
+/* page transition to right side */
+/* 
 .page-enter {
   opacity: 0;
   height: 2vh;
-  right: -100%;
+  right: -80%;
 }
 .page-enter.page-enter-active {
   opacity: 1;
@@ -69,4 +69,53 @@ body {
   height: 2vh;
 
   transition: all 600ms;
+} */
+
+/* page transition to and from middle  */
+
+/* .page-enter {
+  opacity: 0;
+  height: 2vh;
+}
+.page-enter.page-enter-active {
+  opacity: 1;
+  height: 90vh;
+
+  transition: all 500ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+.page-exit.page-exit-active {
+  opacity: 0;
+  height: 2vh;
+
+  transition: all 600ms;
+} */
+
+/* page transition to and from bottom  */
+
+.page-enter {
+  opacity: 0;
+  height: 1vh;
+  top: 95%;
+}
+.page-enter.page-enter-active {
+  opacity: 1;
+  height: 90vh;
+  top: 50%;
+
+  transition: all 500ms ease-in-out;
+}
+
+.page-exit {
+  opacity: 1;
+}
+.page-exit.page-exit-active {
+  opacity: 0;
+  height: 1vh;
+  top: 95%;
+
+  transition: all 600ms ease-out;
 }
