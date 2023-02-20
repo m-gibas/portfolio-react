@@ -1,0 +1,14 @@
+.container {
+  /* display: grid;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container img {
+  max-height: 60%;
+}

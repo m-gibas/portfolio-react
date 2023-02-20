@@ -73,7 +73,7 @@ body {
 
 /* page transition to and from middle  */
 
-/* .page-enter {
+.page-enter {
   opacity: 0;
   height: 2vh;
 }
@@ -92,11 +92,11 @@ body {
   height: 2vh;
 
   transition: all 600ms;
-} */
+}
 
 /* page transition to and from bottom  */
 
-.page-enter {
+/* .page-enter {
   opacity: 0;
   height: 1vh;
   top: 95%;
@@ -118,4 +118,4 @@ body {
   top: 95%;
 
   transition: all 600ms ease-out;
-}
+} */
