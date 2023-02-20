@@ -10,6 +10,7 @@
   border-radius: 15px;
   margin-left: 10px;
   z-index: 0;
+  color: black;
 
   transform: translate(0, -50%);
   top: 50%;
@@ -28,35 +29,33 @@
   height: 33%;
 }
 
+.icon {
+  position: absolute;
+  transition: all 0.5s;
+}
+
 .navbar-title {
   font-size: 1.2rem;
   font-weight: 600;
+  position: absolute;
+  opacity: 1;
 }
 
 .navbar-active {
-  color: rgb(47, 60, 240);
+  color: var(--clr-1);
+  transition: all, 5s;
 }
 
-.hide-element {
-  display: none;
-}
-
-/* transitions */
-
-.navbar-transition-enter {
+.hide-navbar-title {
   opacity: 0;
-}
-.navbar-transition-enter.navbar-transition-enter-active {
-  opacity: 1;
-
-  transition: all 500ms;
+  transition: all 0.3s;
 }
 
-.navbar-transition-exit {
-  opacity: 1;
-}
-.navbar-transition-exit.navbar-transition-exit-active {
-  opacity: 0;
+.move-icon {
+  transform: translateX(3rem);
+  transition: all 0.5s;
 
-  transition: all 600ms;
+  background: white;
+  border-radius: 50%;
+  /* border: 5px solid var(--clr-1); */
 }
