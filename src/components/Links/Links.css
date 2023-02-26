@@ -1,0 +1,9 @@
+.links-icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.links-icon {
+  color: black;
+}

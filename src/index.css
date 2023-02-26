@@ -45,6 +45,11 @@ body {
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
+.container img {
+  max-width: 30vw;
+  max-height: 70vh;
+}
+
 /* page transition to right side */
 /* 
 .page-enter {
@@ -81,7 +86,7 @@ body {
   opacity: 1;
   height: 90vh;
 
-  transition: all 500ms;
+  transition: all 400ms;
 }
 
 .page-exit {
@@ -91,7 +96,7 @@ body {
   opacity: 0;
   height: 2vh;
 
-  transition: all 600ms;
+  transition: all 450ms;
 }
 
 /* page transition to and from bottom  */
